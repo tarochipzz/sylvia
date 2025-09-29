@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const HomePage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -111,7 +112,7 @@ export const HomePage = () => {
                 )
               `,
               backgroundSize: "200% 200%",
-              animation: "shimmer 3s ease-in-out infinite",
+              animation: "shimmer 2s ease-in-out infinite",
               opacity: 0.6,
             }}
           />
@@ -163,15 +164,24 @@ export const HomePage = () => {
       <div className="grid grid-rows-[50px_1fr] p-[20px] h-full">
         <header className="flex justify-between items-start p-[15px]">
           <nav className="flex flex-row gap-[18px] text-stone-700">
-            <span className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors">
+            <Link
+              to="/projects"
+              className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors"
+            >
               Projects
-            </span>
-            <span className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors">
+            </Link>
+            <Link
+              to="/gallery"
+              className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors"
+            >
               Gallery
-            </span>
-            <span className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors">
+            </Link>
+            <Link
+              to="/about"
+              className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors"
+            >
               About
-            </span>
+            </Link>
           </nav>
         </header>
 

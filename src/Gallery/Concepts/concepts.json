@@ -1,0 +1,9 @@
+[
+  {
+    "id": "latte-art",
+    "image": "/assets/gallery/concepts/drip-holder.png",
+    "title": "Brewed Perfection in Neutral Tones",
+    "prompt": "create an image of a artistic coffee dripper stand, industrial meets minimalistic japanese vibe, a block of grey concrete is the stand with a wooden holder coming out of it holding a clear coffee dripper, coffee is dropping into a cup",
+    "model": "gpt-5"
+  }
+]
