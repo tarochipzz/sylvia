@@ -9,7 +9,7 @@ const galleryItems = [
     bgColor: "#D6F74C",
     textColor: "#8C9EFF",
     relPath: "concepts",
-    image: "src/assets/gallery/design-book.png",
+    image: "/gallery/design-book.png",
     position: "absolute w-[26%] bottom-[15%] left-[45%]",
   },
   {
@@ -19,7 +19,7 @@ const galleryItems = [
     bgColor: "#8C9EFF",
     textColor: "#FCD9BE",
     relPath: "perception",
-    image: "src/assets/gallery/flowers.png",
+    image: "/gallery/flowers.png",
     position: "absolute w-[25%] top-[5%] left-[20%]",
   },
   {
@@ -29,7 +29,7 @@ const galleryItems = [
     bgColor: "#F06038",
     textColor: "#D6F74C",
     relPath: "food-coffee",
-    image: "src/assets/gallery/coffee.png",
+    image: "/gallery/coffee.png",
     position: "absolute w-[20%] top-[45%] left-[25%]",
   },
 ];
@@ -57,7 +57,7 @@ export const GalleryPage = () => {
     <div className="min-h-screen w-full bg-apricot flex items-center justify-center">
       <div className="relative max-w-full max-h-screen">
         <img
-          src="src/assets/gallery/background.png"
+          src="/gallery/background.png"
           alt="Gallery Background"
           className="max-w-full max-h-screen w-auto h-auto"
         />
