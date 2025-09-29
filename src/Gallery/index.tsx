@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const galleryItems = [
   {
     name: "CONCEPTS",
-    description: "imaginary items",
+    description:
+      "If I could create my own collection of objects and home items...a dream catalog brought to life with AI ♡",
     hex: "#D6F74C",
     bgColor: "#D6F74C",
     textColor: "#8C9EFF",
@@ -85,7 +86,7 @@ export const GalleryPage = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <h2
-              className="text-3xl font-bold mb-4"
+              className="text-3xl font-bold mb-5"
               style={{ color: galleryItems[selectedItem].textColor }}
             >
               {galleryItems[selectedItem].name}
