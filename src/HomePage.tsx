@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavBar } from "./Components/NavBar";
 
 export const HomePage = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -162,27 +162,8 @@ export const HomePage = () => {
 
       {/* Content */}
       <div className="grid grid-rows-[50px_1fr] p-[20px] h-full">
-        <header className="flex justify-between items-start p-[15px]">
-          <nav className="flex flex-row gap-[18px] text-stone-700">
-            <Link
-              to="/projects"
-              className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors"
-            >
-              Projects
-            </Link>
-            <Link
-              to="/gallery"
-              className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors"
-            >
-              Gallery
-            </Link>
-            <Link
-              to="/about"
-              className="text-sm lg:text-base font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors"
-            >
-              About
-            </Link>
-          </nav>
+        <header className="p-[20px]">
+          <NavBar />
         </header>
 
         <main className="flex items-center justify-center w-full h-full">

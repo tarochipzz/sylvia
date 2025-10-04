@@ -124,7 +124,7 @@ export const ConceptsPage = () => {
                       onClick={handleBack}
                       className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
                     >
-                      ← Back to Catalog
+                      ← to catalog
                     </button>
 
                     <div className="flex gap-2">
