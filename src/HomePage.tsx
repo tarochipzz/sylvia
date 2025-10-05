@@ -207,27 +207,7 @@ export const HomePage = () => {
               inset 0 0 20px rgba(255,255,255,0.4)
             `,
           }}
-        >
-          {/* Animated iridescent overlay */}
-          <div
-            className="absolute inset-0 rounded-full"
-            style={{
-              backdropFilter: "blur(3px)",
-              background: `
-                linear-gradient(135deg,
-                  rgba(173, 216, 230, 0.2) 0%,
-                  rgba(221, 160, 221, 0.5) 25%,
-                  rgba(152, 251, 152, 0.5) 50%,
-                  rgba(255, 182, 193, 0.5) 75%,
-                  rgba(173, 216, 230, 0.5) 100%
-                )
-              `,
-              backgroundSize: "200% 200%",
-              animation: "shimmer 2s ease-in-out infinite",
-              opacity: 0.6,
-            }}
-          />
-        </div>
+        ></div>
 
         {/* Glass overlay with highlights */}
         <div
@@ -300,23 +280,6 @@ export const HomePage = () => {
             }}
           >
             <div
-              className="absolute inset-0 rounded-full"
-              style={{
-                background: `
-                  linear-gradient(135deg,
-                    rgba(173, 216, 230, 0.15) 0%,
-                    rgba(221, 160, 221, 0.4) 25%,
-                    rgba(152, 251, 152, 0.4) 50%,
-                    rgba(255, 182, 193, 0.4) 75%,
-                    rgba(173, 216, 230, 0.4) 100%
-                  )
-                `,
-                backgroundSize: "200% 200%",
-                animation: "shimmer 3s ease-in-out infinite",
-                opacity: 0.5,
-              }}
-            />
-            <div
               className="absolute inset-0 w-full h-full rounded-full"
               style={{
                 background:
@@ -358,18 +321,6 @@ export const HomePage = () => {
           </h1>
         </main>
       </div>
-
-      {/* Add keyframes for animations */}
-      <style>{`
-        @keyframes shimmer {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-      `}</style>
     </div>
   );
 };
