@@ -11,7 +11,7 @@ const StyledLink = ({
 }) => (
   <Link
     to={to}
-    className="text-lg font-light cursor-pointer hover:underline hover:text-stone-900 transition-colors"
+    className="text-lg font-light cursor-pointer hover:underline transition-colors"
     style={{ fontWeight: isActive ? "500" : "300" }}
   >
     {children}
