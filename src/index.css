@@ -6,6 +6,8 @@
   --color-chartreuse: #D6F74c;
   --color-vista-blue: #8C9EFF;
   --color-tomato: #f06038;
+  --color-forest-green: #B7A861;
+  --color-baby-pink: #EABBBA;
 
   --font-size-xs: 0.75rem;      /* 12px */
   --font-size-sm: 0.875rem;     /* 14px */
@@ -33,6 +35,7 @@
 
 body {
   margin: 0;
+  overscroll-behavior: none;
 }
 
 h2 {

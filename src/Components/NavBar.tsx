@@ -18,11 +18,11 @@ const StyledLink = ({
   </Link>
 );
 
-export const NavBar = () => {
+export const NavBar = ({ className }: { className?: string }) => {
   const location = useLocation();
 
   return (
-    <nav className="flex flex-row gap-[18px] text-stone-700">
+    <nav className={`flex flex-row gap-[18px] text-stone-700 ${className}`}>
       <StyledLink to="/" isActive={location.pathname === "/"}>
         Home
       </StyledLink>
