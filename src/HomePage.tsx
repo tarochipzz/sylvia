@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { NavBar } from "./Components/NavBar";
 
 export const HomePage = () => {
-  const [isHoveringText, setIsHoveringText] = useState(false);
   const [isHoveringNav, setIsHoveringNav] = useState(false);
   const [isPopping, setIsPopping] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -17,19 +16,21 @@ export const HomePage = () => {
       speedX: number;
       speedY: number;
       opacity: number;
+      zIndex: number;
     }>
   >([]);
 
   // Initialize bubbles
   useEffect(() => {
-    const bubbleCount = 50;
+    const bubbleCount = 65;
     bubblesRef.current = Array.from({ length: bubbleCount }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
       size: Math.random() * 60 + 20,
       speedX: (Math.random() - 0.5) * 0.5,
       speedY: (Math.random() - 0.5) * 0.5,
-      opacity: Math.random() * 0.4 + 0.2,
+      zIndex: Math.random() > 0.5 ? 100 : 5,
+      opacity: Math.random() * 0.8 + 0.2,
     }));
   }, []);
 
@@ -51,20 +52,12 @@ export const HomePage = () => {
 
         // Calculate rotation based on distance from center
         // Normalize to -1 to 1 range
-        const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -8; // Max 8deg
-        const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 8; // Max 8deg
+        const rotateX = ((e.clientY - centerY) / (rect.height / 2)) * -8;
+        const rotateY = ((e.clientX - centerX) / (rect.width / 2)) * 8;
 
         textRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       }
-
       const target = e.target;
-      //@ts-expect-error matches is a valid method
-      if (target?.matches("h1")) {
-        setIsHoveringText(true);
-      } else {
-        setIsHoveringText(false);
-      }
-
       //@ts-expect-error matches is a valid method
       const hoveringNavNow = target?.matches("nav *");
 
@@ -219,6 +212,7 @@ export const HomePage = () => {
           <div
             className="absolute inset-0 rounded-full"
             style={{
+              backdropFilter: "blur(3px)",
               background: `
                 linear-gradient(135deg,
                   rgba(173, 216, 230, 0.2) 0%,
@@ -234,16 +228,6 @@ export const HomePage = () => {
             }}
           />
         </div>
-
-        {/* Distortion layer with conditional color filter */}
-        <div
-          className="absolute inset-0 w-full h-full rounded-full"
-          style={{
-            backdropFilter: "blur(4px)",
-            opacity: isHoveringText ? 1 : 0,
-            transition: "opacity 0.3s ease-in-out",
-          }}
-        />
 
         {/* Glass overlay with highlights */}
         <div
@@ -288,7 +272,7 @@ export const HomePage = () => {
             left: `${bubble.x - bubble.size / 2}px`,
             top: `${bubble.y - bubble.size / 2}px`,
             transition: "none",
-            zIndex: 10,
+            zIndex: bubble.zIndex,
           }}
         >
           <div
@@ -311,6 +295,8 @@ export const HomePage = () => {
                 inset 0 0 10px rgba(255,255,255,0.3)
               `,
               opacity: bubble.opacity,
+              backdropFilter: "blur(3px)",
+              transition: "opacity 0.3s ease-in-out",
             }}
           >
             <div
