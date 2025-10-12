@@ -1,45 +1,36 @@
-const books = [
-  {
-    image: "/gallery/food/recipe-book.png",
-    position:
-      "absolute sm:w-[19%] sm:bottom-[61%] sm:left-[22%] w-[30%] bottom-[65%] left-[32%]",
-  },
-  {
-    image: "/gallery/food/coffee-book.png",
-    position:
-      "absolute sm:w-[18%] sm:bottom-[63%] sm:left-[38%] w-[28%] bottom-[66.5%] left-[56%]",
-  },
-
-];
-
 export const FoodCoffeePage = () => {
   return (
     <div className="bg-linen ">
-      <div className="min-h-screen w-full flex items-center justify-center">
-        <div className="relative max-w-full max-h-screen">
-          <picture>
-            <source
-              media="(max-width: 640px)"
-              srcSet="/gallery/food/food-background-mobile.png"
-            />
-            <source
-              media="(min-width: 641px)"
-              srcSet="/gallery/food/food-background.png"
+      <div className="min-h-screen w-full flex flex-col gap-20 px-5 box-border items-center justify-center">
+        <h2 className="font-sketch hidden sm:block">
+          What do you want to make ?
+        </h2>
+        <div className="flex flex-col sm:flex-row gap-10 sm:gap-30 items-center justify-center">
+          <div className="relative inline-block group cursor-pointer">
+            <img
+              src="/gallery/food/coffee1.png"
+              className="w-70 group-hover:opacity-0 transition-opacity duration-600 ease-in-out"
+              alt="Coffee maker"
             />
             <img
-              src="/gallery/food/food-background.png"
-              alt="Gallery Background"
-              className="max-w-full max-h-screen w-auto h-auto"
+              src="/gallery/food/coffee2.png"
+              className="scale-x-101 absolute left-[-0.5px] top-[-1px] opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out"
+              alt="Coffee maker with drip"
             />
-          </picture>
-          {books.map((item, index) => (
+          </div>
+          {/* <h1>/</h1> */}
+          <div className="relative inline-block group cursor-pointer">
             <img
-              key={index}
-              src={item.image}
-              className={`${item.position} hover:brightness-80 cursor-pointer z-10 transition-all`}
-              // onClick={() => setSelectedItem(index)}
+              src="/gallery/food/sushi1.png"
+              className="w-110 group-hover:opacity-0 transition-opacity duration-200 ease-in-out"
+              alt="Coffee maker"
             />
-          ))}
+            <img
+              src="/gallery/food/sushi2.png"
+              className="scale-105 absolute top-[-30px] left-[5px] sm:top-[-48px] sm:left-[8px] opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out"
+              alt="Coffee maker with drip"
+            />
+          </div>
         </div>
       </div>
     </div>

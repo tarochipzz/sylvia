@@ -4,9 +4,8 @@ import { NavBar } from "../Components/NavBar";
 
 const galleryItems = [
   {
-    name: "CONCEPTS",
-    description:
-      "If I could create my own collection of objects and home items...a dream catalog brought to life with AI ♡",
+    name: "IMAGINE",
+    description: "Objects I want that don't exist",
     hex: "#D6F74C",
     bgColor: "#D6F74C",
     textColor: "#8C9EFF",
@@ -16,24 +15,27 @@ const galleryItems = [
       "absolute sm:w-[26%] sm:bottom-[15%] sm:left-[45%] w-[40%] bottom-[30%] left-[55%]",
   },
   {
-    name: "PERCEPTION",
-    description: "how I perceive the world",
+    name: "SEE",
+    description:
+      "Moments that made me slow down and notice beauty in the ordinary.",
     hex: "#8C9EFF",
     bgColor: "#8C9EFF",
     textColor: "#FCD9BE",
     relPath: "perception",
     image: "/gallery/flowers.png",
-    position: "absolute sm:w-[25%] sm:top-[5%] sm:left-[20%] w-[45%] bottom-[45%] left-[15%]",
+    position:
+      "absolute sm:w-[25%] sm:top-[5%] sm:left-[20%] w-[45%] bottom-[45%] left-[15%]",
   },
   {
-    name: "FOOD & COFFEE",
-    description: "if it's not aesthetic I'm not eating it",
+    name: "MAKE",
+    description: "My kitchen experiments and caffeinated obsessions.",
     hex: "#F06038",
     bgColor: "#F06038",
     textColor: "#D6F74C",
     relPath: "food-coffee",
     image: "/gallery/coffee.png",
-    position: "absolute sm:w-[20%] sm:top-[45%] sm:left-[25%] w-[30%] top-[45%] left-[18%]",
+    position:
+      "absolute sm:w-[20%] sm:top-[45%] sm:left-[25%] w-[30%] top-[45%] left-[18%]",
   },
 ];
 
@@ -63,6 +65,9 @@ export const GalleryPage = () => {
       </div>
       <div className="min-h-screen w-full flex items-center justify-center">
         <div className="relative max-w-full max-h-screen">
+          <h2 className="absolute inset-0 top-1/4 left-1/2 z-20 opacity-20 font-mono text-white h-fit">
+            A collection of what I see, make, & imagine.
+          </h2>
           <picture>
             <source
               media="(max-width: 640px)"

@@ -306,15 +306,22 @@ export const HomePage = () => {
         <header className="p-[20px]">
           <NavBar className="text-white hover:text-white" />
         </header>
-
         <main className="flex items-center justify-center w-full h-full">
           <h1
             ref={textRef}
-            className="text-8xl text-baby-pink font-bold"
+            className="text-8xl font-bold relative inline-block"
             style={{
               transformStyle: "preserve-3d",
               transition: "transform 0.1s ease-out",
               willChange: "transform",
+              color: "transparent",
+              backgroundImage: `
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+      linear-gradient(#FFC0CB, #FFC0CB)
+    `,
+              backgroundBlendMode: "multiply",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
             }}
           >
             Hello, I'm Sylvia.
